@@ -80,6 +80,10 @@ const migrate = () => {
 
   spawn('npm', ['i'], { stdio: 'inherit' });
 
+  if (packageJson.resolutions) {
+    console.log('you must change resolutions to overrides!');
+  }
+
   console.log(
     'you may want to run `npm approve-scripts --all --allow-scripts-pin=false` or similar!',
   );
